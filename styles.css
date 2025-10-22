@@ -106,6 +106,13 @@ a:hover {
     color: #1f2937;
     text-decoration: none;
     margin-bottom: 0.25rem;
+    display: inline-block;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .tagline {
