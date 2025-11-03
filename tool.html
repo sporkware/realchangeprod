@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Selling Route Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tool.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="/" class="site-logo">
+                    <img src="logo.svg" alt="Real Change Logo" class="logo-image">
+                </a>
+                <h2 class="tagline">Jobs, Journalism, Justice</h2>
+            </div>
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="vendor-program.html" class="nav-link">Vendor Program</a></li>
+                    <li class="nav-item"><a href="advocacy.html" class="nav-link">Advocacy</a></li>
+                    <li class="nav-item"><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                    <li class="nav-item"><a href="resource-guide.html" class="nav-link">Resource Guide</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="tool.html" class="nav-link">Route Generator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <section class="tool-section">
+            <div class="container">
+                <h1 class="section-title">Paper Selling Route Generator</h1>
+                <div class="tool-container">
+                    <div class="location-input">
+                        <input type="text" id="location-search" placeholder="Enter a location or use your current location">
+                        <button id="current-location-btn">Use Current Location</button>
+                    </div>
+                    <div id="map"></div>
+                    <div class="route-display">
+                        <h2>Your Optimized Route</h2>
+                        <ul id="route-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="tool.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"></script>
+</body>
+</html>
