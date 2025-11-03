@@ -34,24 +34,28 @@
             <div class="container">
                 <h1 class="section-title">Paper Selling Route Generator</h1>
                 <div class="tool-container">
-                    <div class="location-input">
-                        <input type="text" id="location-search" placeholder="Enter a location or use your current location">
-                        <button id="current-location-btn">Use Current Location</button>
-                    </div>
-                    <div class="time-of-day-selector">
-                        <label for="time-of-day">Optimize for:</label>
-                        <select id="time-of-day">
-                            <option value="any">Any Time</option>
-                            <option value="morning">Morning</option>
-                            <option value="afternoon">Afternoon</option>
-                            <option value="evening">Evening</option>
-                        </select>
+                    <div class="controls-panel">
+                        <div class="location-input">
+                            <label for="location-search">Your Location</label>
+                            <input type="text" id="location-search" placeholder="Enter a location">
+                            <button id="current-location-btn">Use Current Location</button>
+                        </div>
+                        <div class="time-of-day-selector">
+                            <label for="time-of-day">Optimize for:</label>
+                            <select id="time-of-day">
+                                <option value="any">Any Time</option>
+                                <option value="morning">Morning</option>
+                                <option value="afternoon">Afternoon</option>
+                                <option value="evening">Evening</option>
+                            </select>
+                        </div>
+                        <div class="route-display">
+                            <h2>Your Optimized Route</h2>
+                            <div id="loading-spinner" class="spinner" style="display: none;"></div>
+                            <ul id="route-list"></ul>
+                        </div>
                     </div>
                     <div id="map"></div>
-                    <div class="route-display">
-                        <h2>Your Optimized Route</h2>
-                        <ul id="route-list"></ul>
-                    </div>
                 </div>
             </div>
         </section>

@@ -80,7 +80,10 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 // Function to find grocery stores near a given location
 function findNearbyStores(location) {
     const routeList = document.getElementById('route-list');
-    routeList.innerHTML = '<li>Searching for nearby grocery stores...</li>';
+    const spinner = document.getElementById('loading-spinner');
+
+    spinner.style.display = 'block';
+    routeList.innerHTML = '';
     directionsRenderer.setDirections({routes: []}); // Clear previous route from map
 
     const timeOfDay = document.getElementById('time-of-day').value;
@@ -105,6 +108,7 @@ function findNearbyStores(location) {
     };
 
     service.nearbySearch(request, (results, status) => {
+        spinner.style.display = 'none';
         if (status === google.maps.places.PlacesServiceStatus.OK && results) {
             if (results.length > 1) {
                 createRouteFromStores(results, location);
@@ -120,6 +124,9 @@ function findNearbyStores(location) {
 // Create and calculate the walking route
 function createRouteFromStores(stores, startLocation) {
     const directionsService = new google.maps.DirectionsService();
+    const spinner = document.getElementById('loading-spinner');
+
+    spinner.style.display = 'block';
 
     // The user's location is the start and end of the trip
     const origin = startLocation;
@@ -138,6 +145,7 @@ function createRouteFromStores(stores, startLocation) {
         optimizeWaypoints: true, // This is key for an efficient route
         travelMode: 'WALKING'
     }, (response, status) => {
+        spinner.style.display = 'none';
         if (status === 'OK') {
             directionsRenderer.setDirections(response);
             displayRouteLegs(response);
